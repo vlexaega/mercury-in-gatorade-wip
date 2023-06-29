@@ -1,21 +1,37 @@
-const Sequelize = require('sequelize');
-require('dotenv').config();
+const router = require('express').Router();
+const { User } = require('../../models');
 
-let sequelize;
+router.post('/', async (req, res) => {
+    try {
+        const userDate = await User.create(req.body);
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+            res.status(200).json(userData);
+        });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
-if (process.env.JAWSDB_URL) {
-    sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
-    sequelize = new Sequelize(
-        process.env.DB_NAME,
-        process.env.DB_USER,
-        process.env.DB_PASSWORD,
-        {
-            host: 'localhost',
-            dialect: 'mysql',
-            port: 3306
+router.post('/login', async (req, res) => {
+    try {
+        const userData = await User.findOne({ where: { email:req.body.email } });
+        if (!userData) {
+            res
+            .status(400)
+            .json({ message: 'Incorrect email or password, please try again' });
+            return;
         }
-    );
-}
+        const validPassword = await userDate.checkPassword(req.body.password);
+        if(!validPassword) {
+            res
+            .status(400)
+            .json({ message: 'Incorrect email or password, please try again' });
+            return;
+        }
+    }
+})
 
-module.exports = sequelize;
+
+module.exports = router;
