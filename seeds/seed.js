@@ -16,7 +16,10 @@ const seedUsers = async () => {
         email: 'alex@you.com',
         password: 'sosilly456',
       },
-    ]);
+    ], {
+      individualHooks: true,
+      returning: true,
+    });
     console.log('User seed data created successfully.');
   } catch (error) {
     console.error('Error seeding users:', error);
