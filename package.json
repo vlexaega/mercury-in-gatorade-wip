@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrodraw/astrochart": "^3.0.0-rc5",
     "bcrypt": "^5.0.0",
+    "celestial-moon": "^1.0.2",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
