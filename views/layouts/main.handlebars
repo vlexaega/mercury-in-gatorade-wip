@@ -12,13 +12,11 @@
 <body>
   <div>
     <header>
-      <h1 class="sparkling-text">
-        <a href="/">Welcome to Mercury in Gatorade</a>
-      </h1>
+      <h1 id="welcome">Mercury in Gatorade</h1>
     </header>
     <main>
         <!-- Render the sub layout -->
-      <nav class="sparkling-text">
+      <nav id="login-button">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
