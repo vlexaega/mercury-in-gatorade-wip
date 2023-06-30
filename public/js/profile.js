@@ -5,7 +5,6 @@ const sumbitForm = async (event) => {
   const dateOfBirth = document.querySelector('#date-birth').value.trim();
   const place = document.querySelector('#place-birth').value.trim();
   const time = document.querySelector('#time-birth').value.trim();
-  // const gender = document.querySelector('#gender').value.trim();
 
   if (name && dateOfBirth && place && time) {
     // /horoscopes is a placeholder
@@ -40,3 +39,11 @@ const delButton = async (event) => {
     }
   }
 };
+
+document
+  .querySelector('.new-chart-form')
+  .addEventListener('submit', newFormHandler);
+
+document
+  .querySelector('.chart-list')
+  .addEventListener('click', delButtonHandler);
