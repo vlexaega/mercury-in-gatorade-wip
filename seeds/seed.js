@@ -25,7 +25,8 @@ const seedUsers = async () => {
     );
     console.log('User seed data created successfully.');
   } catch (error) {
-    console.error('Error seeding users:', error);}
+    console.error('Error seeding users:', error);
+  }
   // } finally {
   //   await sequelize.close();
   // }
@@ -48,7 +49,7 @@ const seedUsers = async () => {
       },
     ]);
   } catch (error) {
-    console.error('Error seeding users:', error);
+    console.error('Error seeding chart:', error);
   } finally {
     await sequelize.close();
   }
