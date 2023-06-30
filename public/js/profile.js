@@ -7,8 +7,7 @@ const sumbitForm = async (event) => {
   const time = document.querySelector('#time-birth').value.trim();
 
   if (name && dateOfBirth && place && time) {
-    // /horoscopes is a placeholder
-    const response = await fetch('/api/horoscopes', {
+    const response = await fetch('/api/charts', {
       method: 'POST',
       body: JSON.stringify({ name, dateOfBirth, place, time }),
       headers: {
@@ -28,7 +27,7 @@ const delButton = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`api/horoscopes/${id}`, {
+    const response = await fetch(`api/charts/${id}`, {
       method: 'DELETE',
     });
 
