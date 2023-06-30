@@ -8,6 +8,7 @@ body {
     background-image: url('../assets/zodiac-wheel-with-galaxy-stars-background-astrology-horoscope-with-signs-aries-taurus-gemini-cancer-leo-virgo-libra-scorpio-sagittarius-capricorn-aquarius-pisces-symbols-free-vector.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 /* #login-button {
     display: flex;
@@ -21,7 +22,11 @@ body {
     background-color: white;
 }
 
-.form-group{
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     color: white;
 }
 
@@ -30,14 +35,29 @@ body {
     /* background-color: white; */
 }
 
-#welcome, #login-button{
+h2, h3{
+    animation: sparkle 4s infinite;
+}
+
+#welcome {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
     margin-top: 0%;
     animation: sparkle 4s infinite;
-    background-color: white;
+    /* background-color: white; */
+    font-size: 32px;
+}
+
+#login-button {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2%;
+    animation: sparkle 4s infinite;
+    /* background-color: white; */
     font-size: 24px;
 }
 
