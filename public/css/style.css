@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    color: purple; /*this is the text color for the whole page */
+}
+
+body {
+    background-image: url('../assets/astrology-horoscope-circle.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* #login-button {
+    display: flex;
+    margin-top: 50%;
+} */
+
+#welcome, #login-button{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+};
+
+@keyframes sparkle {
+    0% {
+      color: white;
+      text-shadow: none;
+    }
+    50% {
+      color: gold;
+      text-shadow: 0 0 10px gold;
+    }
+    100% {
+      color: white;
+      text-shadow: none;
+    }
+  }
+  
+  .sparkling-text {
+    animation: sparkle 2s infinite;
+  }
+
+
