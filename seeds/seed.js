@@ -27,6 +27,9 @@ const seedUsers = async () => {
   } catch (error) {
     console.error('Error seeding users:', error);
   }
+  // } finally {
+  //   await sequelize.close();
+  // }
 
   try {
     await Chart.bulkCreate([
@@ -39,7 +42,7 @@ const seedUsers = async () => {
       },
       {
         name: 'Ben Red',
-        birthDate: '2000-02-06',
+        birthDate: '2010-04-20',
         birthTime: '09:57:59',
         birthPlace: 'Texas',
         user_id: 2,

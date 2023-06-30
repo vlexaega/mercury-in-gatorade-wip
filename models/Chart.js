@@ -17,7 +17,8 @@ Chart.init(
       allowNull: false,
     },
     birthDate: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATEONLY, 
+      // YYYY-MM-DD
       allowNull: false,
       validate: {
         isDate: true,
