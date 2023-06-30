@@ -37,12 +37,14 @@ const seedUsers = async () => {
         birthDate: '06132000',
         birthTime: '05:56:53',
         birthPlace: 'South Carolina',
+        user_id: 1,
       },
       {
         name: 'Ben Red',
         birthDate: '09152010',
         birthTime: '09:57:59',
         birthPlace: 'Texas',
+        user_id: 2,
       },
     ]);
   } catch (error) {
