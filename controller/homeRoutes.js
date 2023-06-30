@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Chart } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -24,6 +24,20 @@ router.get('/profile', withAuth, async (req, res) => {
     res.render('profile', {
       ...user,
       logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/profile', async (req, res) => {
+  try {
+    const chartData = await Chart.findAll();
+
+    const charts = chartData.map((chart) => chart.get({ plain: true }));
+    res.render('profile', {
+      charts,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
