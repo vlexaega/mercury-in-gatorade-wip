@@ -1,52 +1,73 @@
-<div class="row">
-  <div class="col-auto">
+<div class='row'>
+  <div class='col-auto'>
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+<div class='row mt-4'>
+  <div class='col-md-6'>
+    <h3>Create a New Chart:</h3>
 
-    <form class="form new-chart-form">
-      <div class="form-group">
-        <label for="chart-name">Name:</label>
-        <input class="form-input" type="text" id="chart-name" name="chart-name" />
+    <form class='form new-chart-form'>
+      <div class='form-group'>
+        <label for='chart-name'>Name:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='chart-name'
+          name='chart-name'
+        />
       </div>
-      <div class="form-group">
-        <label for="date-birth">Date of Birth:</label>
-        <input class="form-input" type="number" id="date-birth" name="date-birth" />
+      <div class='form-group'>
+        <label for='date-birth'>Date of Birth:</label>
+        <input
+          class='form-input'
+          type='number'
+          id='date-birth'
+          name='date-birth'
+        />
       </div>
-      <div class="form-group">
-        <label for="place-birth">Place of Birth:</label>
-        <textarea class="form-input" id="place-birth" name="place-birth"></textarea>
+      <div class='form-group'>
+        <label for='place-birth'>Place of Birth:</label>
+        <textarea
+          class='form-input'
+          id='place-birth'
+          name='place-birth'
+        ></textarea>
       </div>
-      <div class="form-group">
-        <label for="time-birth">Time of Birth:</label>
-        <textarea class="form-input" id="time-birth" name="time-birth"></textarea>
+      <div class='form-group'>
+        <label for='time-birth'>Time of Birth:</label>
+        <textarea
+          class='form-input'
+          id='time-birth'
+          name='time-birth'
+        ></textarea>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create Chart</button>
+      <div class='form-group'>
+        <button type='submit' class='btn btn-primary'>Create Chart</button>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if charts.length}}
+    <div class='col-md-6 project-list'>
+      <h3>Current Chart:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
+      {{#each charts as |chart|}}
+        <div class='row mb-2'>
+          <div class='col-md-8'>
+            <h4><a href='/project/{{chart.id}}'>{{chart.name}}</a></h4>
+          </div>
+          <div class='col-md-4'>
+            <button
+              class='btn btn-sm btn-danger'
+              data-id='{{chart.id}}'
+            >DELETE</button>
+          </div>
+        </div>
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src='./js/profile.js'></script>
