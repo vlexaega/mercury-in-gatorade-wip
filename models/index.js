@@ -1,13 +1,13 @@
 const User = require('./User');
-// const Project = require('./Project');
+const Chart = require('./Chart');
 
-// User.hasMany(Project, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+User.hasMany(Chart, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
-// Project.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
+Chart.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 
 module.exports = { User };
