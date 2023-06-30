@@ -44,7 +44,7 @@ h2, h3{
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-    margin-top: 0%;
+    margin-top: 2%;
     animation: sparkle 4s infinite;
     /* background-color: white; */
     font-size: 32px;
