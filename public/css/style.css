@@ -50,6 +50,14 @@ h2, h3{
     font-size: 32px;
 }
 
+#paper{
+    display: flex;
+    justify-content: right;
+    margin-top: -50%;
+    margin-left: 40%;
+    margin-right: 5%;
+}
+
 #login-button {
     display: flex;
     flex-wrap: wrap;
