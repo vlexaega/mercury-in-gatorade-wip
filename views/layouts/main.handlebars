@@ -10,23 +10,21 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Read your Horoscope</a>
-      </h1>
-      <nav>
+  <div>
+    <header>
+      <h1 id="welcome">Mercury in Gatorade</h1>
+    </header>
+    <main>
+        <!-- Render the sub layout -->
+      <nav id="login-button">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a id="login-button" href="/login">Login</a>
         {{/if}}
       </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-        <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
