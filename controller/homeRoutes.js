@@ -1,14 +1,33 @@
 const router = require('express').Router();
 const { User, Chart } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
 
 router.get('/', async (req, res) => {
+  //Fortune Cookie Return 
+  let response;
+  const options = {
+    method: 'GET',
+    url: 'https://fortune-cookie4.p.rapidapi.com/',
+    headers: {
+      'X-RapidAPI-Key': '1c80cf076fmsh16ee6c98767b11dp1197c9jsn1b984ba5f989',
+      'X-RapidAPI-Host': 'fortune-cookie4.p.rapidapi.com'
+    }
+  };
+  
+  try {
+    response = await axios.request(options);
+    console.log(response.data.data);
+  } catch (error) {
+    console.error(error);
+  }
   try {
     const userData = await User.findAll();
     const users = userData.map((user) => user.get({ plain: true }));
     res.render('homepage', {
       users,
       logged_in: req.session.logged_in,
+      fortune_response: response.data.data.message,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -53,3 +72,5 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 module.exports = router;
+
+//Fortune Cookie Route
