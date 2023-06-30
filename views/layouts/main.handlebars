@@ -12,17 +12,19 @@
 <body>
   <div>
     <header>
-      <h1 id="welcome">Mercury in Gatorade</h1>
+      <a href="/login">
+        <h1 id="welcome">Mercury in Gatorade</h1>
+      </a>
     </header>
     <main>
-        <!-- Render the sub layout -->
+      <!-- Render the sub layout -->
       <nav id="login-button">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        {{!-- <a href="/profile">profile</a> | --}}
+        <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a id="login-button" href="/login">Login</a>
+        <!-- <a id="login-button" href="/login">Login</a> -->
         {{/if}}
       </nav>
       {{{ body }}}
