@@ -70,7 +70,7 @@ router.get('/project/:id', async (req, res) => {
     const chartData = await Chart.findByPk(req.params.id)
     console.log(chartData);
     const chart = chartData.get({plain: true})
-    res.json(chart)
+    res.render("chart", {chart})
   } catch (error) {
     res.json(error)
   }
