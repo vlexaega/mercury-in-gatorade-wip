@@ -65,8 +65,15 @@ router.get('/profile', async (req, res) => {
   }
 });
 
-router.get('/project/:id', (req, res) => {
-  if
+router.get('/project/:id', async (req, res) => {
+  try {
+    const chartData = await Chart.findByPk(req.params.id)
+    console.log(chartData);
+    const chart = chartData.get({plain: true})
+    res.json(chart)
+  } catch (error) {
+    res.json(error)
+  }
 })
 
 
