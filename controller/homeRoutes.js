@@ -38,8 +38,10 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
+      include: [Chart]
     });
     const user = userData.get({ plain: true });
+    console.log(user);
     res.render('profile', {
       ...user,
       logged_in: true,
@@ -62,6 +64,12 @@ router.get('/profile', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/project/:id', (req, res) => {
+  if
+})
+
+
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
