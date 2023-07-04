@@ -1,15 +1,15 @@
-const sumbitForm = async (event) => {
+const submitForm = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#chart-name').value.trim();
-  const dateOfBirth = document.querySelector('#date-birth').value.trim();
-  const place = document.querySelector('#place-birth').value.trim();
-  const time = document.querySelector('#time-birth').value.trim();
+  const birthDate = document.querySelector('#date-birth').value.trim();
+  const birthPlace = document.querySelector('#place-birth').value.trim();
+  const birthTime = document.querySelector('#time-birth').value.trim();
 
-  if (name && dateOfBirth && place && time) {
+  if (name && birthDate && birthPlace && birthTime) {
     const response = await fetch('/api/charts', {
       method: 'POST',
-      body: JSON.stringify({ name, dateOfBirth, place, time }),
+      body: JSON.stringify({ name, birthDate, birthPlace, birthTime }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -41,8 +41,8 @@ const delButton = async (event) => {
 
 document
   .querySelector('.new-chart-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', submitForm);
 
-document
-  .querySelector('.chart-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.chart-list')
+//   .addEventListener('click', delButtonHandler);
