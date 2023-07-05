@@ -11,6 +11,16 @@ body {
     background-size: cover;
     color: white;
 }
+
+ul{
+    /* border: 2px red solid; */
+    text-align: center;
+    animation: sparkle 4s infinite;
+    /* background-color: white; */
+    font-size: 36px;
+    margin-top: 10%;
+    font-family: fantasy;
+}
 /* #login-button {
     display: flex;
     margin-top: 50%;
@@ -64,6 +74,19 @@ h2, h3{
 }
 
 #daily-fortune, #horoscope {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2%;
+    animation: sparkle 4s infinite;
+    /* background-color: white; */
+    font-size: 30px;
+    margin-top: 8%;
+    font-family: fantasy;
+}
+
+#charting {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
