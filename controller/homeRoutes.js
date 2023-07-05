@@ -104,7 +104,10 @@ router.get('/charts/:id', async (req, res) => {
     const chartData = await Chart.findByPk(req.params.id);
     console.log(chartData);
     const chart = chartData.get({ plain: true });
-    res.render('chart', { chart });
+    res.render('individualcharts', { 
+      chart,
+      logged_in: req.session.logged_in, 
+  });
   } catch (error) {
     res.json(error);
   }

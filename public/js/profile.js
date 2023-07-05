@@ -39,7 +39,7 @@ const delButton = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/chart');
+      document.location.replace('/individualcharts');
     } else {
       alert('Failed to delete chart');
     }
