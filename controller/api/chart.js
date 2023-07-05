@@ -2,7 +2,12 @@ const router = require('express').Router();
 const { Chart } = require('../../models');
 
 router.get('/', async (req, res) => {
-  const chartData = await Chart.findAll();
+  console.log('session for getting all charts', req.session);
+  const chartData = await Chart.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+  });
   res.status(200).json(chartData);
 });
 
@@ -20,6 +25,8 @@ router.post('/', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+  console.log(req.session.user_id);
+  console.log(req.params.id);
   try {
     const chartData = await Chart.destroy({
       where: {
@@ -27,7 +34,7 @@ router.delete('/:id', async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-    console.log(req.session);
+
     console.log(`HI`);
     if (!chartData) {
       res.status(404).json({ message: 'No chart found with this id!' });
