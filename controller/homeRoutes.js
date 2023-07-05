@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Chart } = require('../models');
 const withAuth = require('../utils/auth');
 const axios = require('axios');
+require('dotenv').config();
 
 router.get('/', async (req, res) => {
   //Fortune Cookie Return
@@ -10,7 +11,7 @@ router.get('/', async (req, res) => {
     method: 'GET',
     url: 'https://fortune-cookie4.p.rapidapi.com/',
     headers: {
-      'X-RapidAPI-Key': '1c80cf076fmsh16ee6c98767b11dp1197c9jsn1b984ba5f989',
+      'X-RapidAPI-Key': process.env.API_KEY,
       'X-RapidAPI-Host': 'fortune-cookie4.p.rapidapi.com',
     },
   };
@@ -40,11 +41,11 @@ router.get('/profile', withAuth, async (req, res) => {
     method: 'GET',
     url: 'https://horoscope34.p.rapidapi.com/api/horoscope/today',
     headers: {
-      'X-RapidAPI-Key': '1c80cf076fmsh16ee6c98767b11dp1197c9jsn1b984ba5f989',
-      'X-RapidAPI-Host': 'horoscope34.p.rapidapi.com'
-    }
+      'X-RapidAPI-Key': process.env.API_KEY,
+      'X-RapidAPI-Host': 'horoscope34.p.rapidapi.com',
+    },
   };
-  
+
   try {
     response = await axios.request(options);
     console.log(response.data);
