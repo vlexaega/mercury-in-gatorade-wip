@@ -21,7 +21,7 @@ const submitForm = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/chart');
     } else {
       alert('Failed to create chart');
     }
@@ -38,7 +38,7 @@ const delButton = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/chart');
     } else {
       alert('Failed to delete chart');
     }
