@@ -35,6 +35,21 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
+  let response;
+  const options = {
+    method: 'GET',
+    url: 'https://horoscope34.p.rapidapi.com/api/horoscope/signs',
+    headers: {
+      'X-RapidAPI-Key': '1c80cf076fmsh16ee6c98767b11dp1197c9jsn1b984ba5f989',
+      'X-RapidAPI-Host': 'horoscope34.p.rapidapi.com'
+    }
+  };
+  try {
+   response = await axios.request(options);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
