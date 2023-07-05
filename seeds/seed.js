@@ -38,6 +38,7 @@ const seedUsers = async () => {
         birthDate: '2000-06-13',
         birthTime: '05:56:53',
         birthPlace: 'South Carolina',
+        astroSign: 'not Real',
         user_id: 1,
       },
       {
@@ -45,6 +46,7 @@ const seedUsers = async () => {
         birthDate: '2010-04-20',
         birthTime: '09:57:59',
         birthPlace: 'Texas',
+        astroSign: 'Bullmalarkey',
         user_id: 2,
       },
     ]);

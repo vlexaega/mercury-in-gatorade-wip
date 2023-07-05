@@ -5,11 +5,18 @@ const submitForm = async (event) => {
   const birthDate = document.querySelector('#date-birth').value.trim();
   const birthPlace = document.querySelector('#place-birth').value.trim();
   const birthTime = document.querySelector('#time-birth').value.trim();
+  const astroSign = document.querySelector('#astro-sign').value.trim();
 
-  if (name && birthDate && birthPlace && birthTime) {
+  if (name && birthDate && birthPlace && birthTime && astroSign) {
     const response = await fetch('/api/charts', {
       method: 'POST',
-      body: JSON.stringify({ name, birthDate, birthPlace, birthTime }),
+      body: JSON.stringify({
+        name,
+        birthDate,
+        birthPlace,
+        birthTime,
+        astroSign,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -43,6 +50,4 @@ document
   .querySelector('.new-chart-form')
   .addEventListener('submit', submitForm);
 
-// document
-//   .querySelector('.chart-list')
-//   .addEventListener('click', delButtonHandler);
+document.querySelector('.chart-list').addEventListener('click', delButton);
