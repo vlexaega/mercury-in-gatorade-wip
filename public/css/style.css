@@ -41,6 +41,15 @@ ul{
     color: white;
 }
 
+#choices {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    margin-left: 45%;
+
+}
+
 #login, #sign-up{
     text-align: center;
     /* background-color: white; */
