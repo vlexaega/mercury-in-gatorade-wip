@@ -53,7 +53,11 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/chart', async (req, res) => {
   try {
-    const chartData = await Chart.findAll();
+    const chartData = await Chart.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
 
     const charts = chartData.map((chart) => chart.get({ plain: true }));
     res.render('chart', {

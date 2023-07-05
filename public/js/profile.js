@@ -29,6 +29,7 @@ const submitForm = async (event) => {
 };
 
 const delButton = async (event) => {
+  console.log('button clicked');
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
