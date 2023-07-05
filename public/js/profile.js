@@ -50,8 +50,11 @@ const delButton = async (event) => {
 let horoscopes = {};
 const preLoadHoroscopes = async () => {
   // 1: make request to your api endpoint
-  horoscopes = await fetch('/api/horoscopes');
+  horoscopes = await fetch('/api/horoscopes', {
+    method: 'GET'
+  });
   // 5: handle data that came back from your api
+
 }
 
 document
