@@ -49,19 +49,22 @@ const delButton = async (event) => {
 // pre-load horoscope data
 let horoscopes = {};
 const preLoadHoroscopes = async () => {
+  console.log("preloading horoscopes")
   // 1: make request to your api endpoint
-  horoscopes = await fetch('/api/horoscopes', {
+  const response  = await fetch('/api/horoscopes', {
     method: 'GET'
   });
   // 5: handle data that came back from your api
+  horoscopes = await response.json();
 
+  console.log("Horoscopes grabbed: ", horoscopes)
 }
 
-document
-  .querySelector('.new-chart-form')
-  .addEventListener('submit', submitForm);
+// document
+//   .querySelector('.new-chart-form')
+//   // .addEventListener('submit', submitForm);
 
-document.querySelector('.chart-list').addEventListener('click', delButton);
+// document.querySelector('.chart-list').addEventListener('click', delButton);
 
 // 6: listen for drop down event
   // test
@@ -70,3 +73,4 @@ document.querySelector('.chart-list').addEventListener('click', delButton);
     // target p tag
     // set textcontent of p tag to value of selected option
 // 7: load corresponding horoscope data into HTML
+preLoadHoroscopes();
