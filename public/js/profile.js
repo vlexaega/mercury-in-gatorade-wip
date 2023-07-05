@@ -49,28 +49,36 @@ const delButton = async (event) => {
 // pre-load horoscope data
 let horoscopes = {};
 const preLoadHoroscopes = async () => {
-  console.log("preloading horoscopes")
+  console.log('preloading horoscopes');
   // 1: make request to your api endpoint
-  const response  = await fetch('/api/horoscopes', {
-    method: 'GET'
+  const response = await fetch('/api/horoscopes', {
+    method: 'GET',
   });
   // 5: handle data that came back from your api
   horoscopes = await response.json();
 
-  console.log("Horoscopes grabbed: ", horoscopes)
-}
+  console.log('Horoscopes grabbed: ', horoscopes);
+};
 
-// document
-//   .querySelector('.new-chart-form')
-//   // .addEventListener('submit', submitForm);
+const selectElement = document.querySelector('#choices');
+const result = document.querySelector('#horoscope');
+console.log(selectElement.value);
 
-// document.querySelector('.chart-list').addEventListener('click', delButton);
+selectElement.addEventListener('change', (event) => {
+  result.textContent = `${event.target.value}`;
+});
+
+preLoadHoroscopes();
+
+document.querySelector('.new-chart-form');
+// .addEventListener('submit', submitForm);
+
+document.querySelector('.chart-list').addEventListener('click', delButton);
 
 // 6: listen for drop down event
-  // test
-  // target dropdown element
-  // add event listener (check your slack messages)
-    // target p tag
-    // set textcontent of p tag to value of selected option
+// test
+// target dropdown element
+// add event listener (check your slack messages)
+// target p tag
+// set textcontent of p tag to value of selected option
 // 7: load corresponding horoscope data into HTML
-preLoadHoroscopes();
