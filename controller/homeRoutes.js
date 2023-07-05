@@ -4,17 +4,17 @@ const withAuth = require('../utils/auth');
 const axios = require('axios');
 
 router.get('/', async (req, res) => {
-  //Fortune Cookie Return 
+  //Fortune Cookie Return
   let response;
   const options = {
     method: 'GET',
     url: 'https://fortune-cookie4.p.rapidapi.com/',
     headers: {
       'X-RapidAPI-Key': '1c80cf076fmsh16ee6c98767b11dp1197c9jsn1b984ba5f989',
-      'X-RapidAPI-Host': 'fortune-cookie4.p.rapidapi.com'
-    }
+      'X-RapidAPI-Host': 'fortune-cookie4.p.rapidapi.com',
+    },
   };
-  
+
   try {
     response = await axios.request(options);
     console.log(response.data.data);
@@ -38,7 +38,7 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [Chart]
+      include: [Chart],
     });
     const user = userData.get({ plain: true });
     console.log(user);
@@ -65,18 +65,16 @@ router.get('/profile', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/charts/:id', async (req, res) => {
   try {
-    const chartData = await Chart.findByPk(req.params.id)
+    const chartData = await Chart.findByPk(req.params.id);
     console.log(chartData);
-    const chart = chartData.get({plain: true})
-    res.render("chart", {chart})
+    const chart = chartData.get({ plain: true });
+    res.render('chart', { chart });
   } catch (error) {
-    res.json(error)
+    res.json(error);
   }
-})
-
-
+});
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {

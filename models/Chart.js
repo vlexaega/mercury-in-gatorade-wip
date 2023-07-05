@@ -17,7 +17,7 @@ Chart.init(
       allowNull: false,
     },
     birthDate: {
-      type: DataTypes.DATEONLY, 
+      type: DataTypes.DATEONLY,
       // YYYY-MM-DD
       allowNull: false,
       validate: {
@@ -29,6 +29,10 @@ Chart.init(
       allowNull: false,
     },
     birthPlace: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    astroSign: {
       type: DataTypes.STRING,
       allowNull: false,
     },
