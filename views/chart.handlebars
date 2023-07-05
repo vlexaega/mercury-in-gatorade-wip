@@ -38,11 +38,7 @@
       </div>
       <div class='form-group'>
         <label for='time-birth'>Time of Birth:</label>
-        <textarea
-          class='form-input'
-          id='time-birth'
-          name='time-birth'
-        ></textarea>
+        <input type="time" id="time-birth"/>
       </div>
       <div class='form-group'>
         <button type='submit' class='btn btn-primary'>Create Chart</button>
@@ -50,14 +46,14 @@
     </form>
   </div>
 
-  {{!-- {{#if charts.length}}
-    <div class='col-md-6 project-list'>
+  {{#if charts.length}}
+    <div class='col-md-6 chart-list'>
       <h3>Current Chart:</h3>
 
       {{#each charts as |chart|}}
         <div class='row mb-2'>
           <div class='col-md-8'>
-            <h4><a href='/project/{{chart.id}}'>{{chart.name}}</a></h4>
+            <h4><a href='/charts/{{chart.id}}'>{{chart.name}}</a></h4>
           </div>
           <div class='col-md-4'>
             <button
@@ -68,6 +64,6 @@
         </div>
       {{/each}}
     </div>
-  {{/if}} --}}
+  {{/if}}
 </div>
 {{> birthchart}}
