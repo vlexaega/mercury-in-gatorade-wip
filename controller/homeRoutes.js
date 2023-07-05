@@ -62,18 +62,19 @@ router.get('/profile', withAuth, async (req, res) => {
     res.render('profile', {
       ...user,
       logged_in: true,
-      signsAq: response.data.payload.Aquarius,
-      signsAr: response.data.payload.Aries,
-      signsCa: response.data.payload.Cancer,
-      signsCap: response.data.payload.Capriocorn,
-      signsGem: response.data.payload.Gemini,
-      signsLeo: response.data.payload.Leo,
-      signsLib: response.data.payload.Libra,
-      signsPic: response.data.payload.Pisces,
-      signsSag: response.data.payload.Sagittarius,
-      signsScor: response.data.payload.Scorpio,
-      signsTau: response.data.payload.Taurus,
-      signsVir: response.data.payload.Virgo,
+      // signsAq: response.data.payload.Aquarius,
+      // signsAr: response.data.payload.Aries,
+      // signsCa: response.data.payload.Cancer,
+      // signsCap: response.data.payload.Capriocorn,
+      // signsGem: response.data.payload.Gemini,
+      // signsLeo: response.data.payload.Leo,
+      // signsLib: response.data.payload.Libra,
+      // signsPic: response.data.payload.Pisces,
+      // signsSag: response.data.payload.Sagittarius,
+      // signsScor: response.data.payload.Scorpio,
+      // signsTau: response.data.payload.Taurus,
+      // signsVir: response.data.payload.Virgo,
+      horoscopes: response.data.payload
     });
   } catch (err) {
     res.status(500).json(err);

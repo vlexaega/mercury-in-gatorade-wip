@@ -46,8 +46,24 @@ const delButton = async (event) => {
   }
 };
 
+// pre-load horoscope data
+let horoscopes = {};
+const preLoadHoroscopes = async () => {
+  // 1: make request to your api endpoint
+  horoscopes = await fetch('/api/horoscopes');
+  // 5: handle data that came back from your api
+}
+
 document
   .querySelector('.new-chart-form')
   .addEventListener('submit', submitForm);
 
 document.querySelector('.chart-list').addEventListener('click', delButton);
+
+// 6: listen for drop down event
+  // test
+  // target dropdown element
+  // add event listener (check your slack messages)
+    // target p tag
+    // set textcontent of p tag to value of selected option
+// 7: load corresponding horoscope data into HTML
