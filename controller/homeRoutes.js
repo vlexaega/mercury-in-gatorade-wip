@@ -51,12 +51,12 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/chart', async (req, res) => {
   try {
     const chartData = await Chart.findAll();
 
     const charts = chartData.map((chart) => chart.get({ plain: true }));
-    res.render('profile', {
+    res.render('chart', {
       charts,
       logged_in: req.session.logged_in,
     });
