@@ -3,7 +3,13 @@
     <h2 id='profile-landing'>Welcome, {{name}}! &#9889;</h2>
   </div>
 </div>
-{{horoscope_response}}
+{{!-- {{horoscope_response}} --}}
+{{#each signs as |sign|}}
+<p>{{sign}}</p>
+{{/each}}
+
+
+<img src= '/assets/aquarius.svg'/>
 
 <div id='horoscope'>
   <h3>DAILY HOROSCOPE GOES HERE</h3>

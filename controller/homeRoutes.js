@@ -38,14 +38,15 @@ router.get('/profile', withAuth, async (req, res) => {
   let response;
   const options = {
     method: 'GET',
-    url: 'https://horoscope34.p.rapidapi.com/api/horoscope/signs',
+    url: 'https://horoscope34.p.rapidapi.com/api/horoscope/today',
     headers: {
       'X-RapidAPI-Key': '1c80cf076fmsh16ee6c98767b11dp1197c9jsn1b984ba5f989',
       'X-RapidAPI-Host': 'horoscope34.p.rapidapi.com'
     }
   };
+  
   try {
-   response = await axios.request(options);
+    response = await axios.request(options);
     console.log(response.data);
   } catch (error) {
     console.error(error);
@@ -60,6 +61,7 @@ router.get('/profile', withAuth, async (req, res) => {
     res.render('profile', {
       ...user,
       logged_in: true,
+      signs: response.data.payload
     });
   } catch (err) {
     res.status(500).json(err);
