@@ -23,6 +23,7 @@ const submitForm = async (event) => {
     if (response.ok) {
       document.location.replace('/chart');
     } else {
+      console.error('failed response', response);
       alert('Failed to create chart');
     }
   }

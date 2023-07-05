@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
+    console.log('req.body', req.body)
     const newChart = await Chart.create({
       ...req.body,
       user_id: req.session.user_id,
@@ -20,6 +21,7 @@ router.post('/', async (req, res) => {
 
     res.status(200).json(newChart);
   } catch (err) {
+    console.error('api chart post fail', err);
     res.status(400).json(err);
   }
 });
