@@ -39,41 +39,22 @@ const delButton = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/individualcharts');
+      document.location.replace('/charts');
     } else {
       alert('Failed to delete chart');
     }
   }
 };
+document.querySelector('.delete').addEventListener('click', delButton);
+document.querySelector('.new-chart-form')
+.addEventListener('submit', submitForm)
 
-// pre-load horoscope data
-let horoscopes = {};
-const preLoadHoroscopes = async () => {
-  console.log('preloading horoscopes');
-  // 1: make request to your api endpoint
-  const response = await fetch('/api/horoscopes', {
-    method: 'GET',
-  });
-  // 5: handle data that came back from your api
-  horoscopes = await response.json();
 
-  console.log('Horoscopes grabbed: ', horoscopes);
-};
 
-const selectElement = document.querySelector('#choices');
-const result = document.querySelector('#horoscope');
-console.log(selectElement.value);
 
-selectElement.addEventListener('change', (event) => {
-  result.textContent = `${event.target.value}`;
-});
 
-preLoadHoroscopes();
 
-document.querySelector('.new-chart-form');
-// .addEventListener('submit', submitForm);
 
-document.querySelector('.chart-list').addEventListener('click', delButton);
 
 // 6: listen for drop down event
 // test

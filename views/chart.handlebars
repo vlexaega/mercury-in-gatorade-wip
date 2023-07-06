@@ -1,5 +1,10 @@
 
 
+ <ul>{{chart.name}}</ul>
+    <ul>{{chart.birthDate}}</ul>
+    <ul>{{chart.birthPlace}}</ul>
+    <ul>{{chart.birthTime}}</ul>
+
 <div class='row mt-4'>
   <div class='col-md-5'>
   <h3>Create a New Chart:</h3>
@@ -52,7 +57,7 @@
           </div>
           <div class='col-md-4'>
             <button
-              class='btn btn-sm btn-danger'
+              class='delete btn btn-sm btn-danger'
               data-id='{{chart.id}}'
             >DELETE</button>
           </div>
@@ -61,3 +66,5 @@
     </div>
   {{/if}}
 </div>
+
+<script src='./js/profile.js'></script>
