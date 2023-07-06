@@ -18,5 +18,7 @@ www.github.com/https://github.com/vlexaega/mercury-in-gatorade-wip
 aurorast@usc.edu, alx.vga2@gmail.com, tawhidkamal5@gmail.com, christopherlee2477@gmail.com
 
 ## Screenshot
+![Image](./screenshot.png)
 
 ## Link 
+[Mercury in Gatorade](https://mercury-in-gatorade-548eb4ca1710.herokuapp.com/)
